@@ -2,11 +2,14 @@
 *.bbl
 *.blg
 *.brf
+*.doc
+*.dvi
 *.log
 *.lof
 *.lot
 *.lol
 *.out
+*.pdf
 *.tcp
 *.toc
 *.tps
