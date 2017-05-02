@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.lof
+*.lot
+*.lol
+*.out
+*.tcp
+*.toc
+*.tps
+*.bak
+*.backup
+*.pdfsync
+*.*~
