@@ -9,8 +9,8 @@ endif
 	pdflatex $(MASTER).tex
 
 clean:
-	@rm -rf *.aux *.bbl *.blg *.brf *.log *.lof *.lot *.lol *.out *.tcp *.toc *.tps *.bak *.backup *.pdfsync *.*~
-	@for i in aux bbl blg brf log lof lot lol out tcp toc tps bak backup pdfsync; do find -name *.$$i -exec rm {} + ; done
+	@rm -rf *.aux *.bbl *.blg *.brf *.log *.lof *.lot *.lol *.out *.tcp *.toc *.tps *.bak *.backup *.pdfsync *.synctex.gz *.*~
+	@for i in aux bbl blg brf log lof lot lol out tcp toc tps bak backup pdfsync synctex.gz; do find -name *.$$i -exec rm {} + ; done
 	@find -name *.*~ -exec rm {} +
 
 cleanall: clean
