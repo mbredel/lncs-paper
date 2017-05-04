@@ -4,5 +4,6 @@ before_install:
   - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
   - mkdir _build
-  - pdflatexi -interaction=nonstopmode -halt-on-error -output-directory _build paper.tex
-
+  - pdflatex -interaction=nonstopmode -halt-on-error paper.tex
+  - if [ -f paper.bib ]; then bibtex paper && pdflatex -interaction=nonstopmode -halt-on-error paper.tex; fi
+  - pdflatex -interaction=nonstopmode -halt-on-error paper.tex
