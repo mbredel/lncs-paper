@@ -2,11 +2,8 @@ MASTER=paper
 
 all: clean
 	pdflatex $(MASTER).tex
-ifneq ("$(wildcard ./${MASTER}.bib)","")
-	bibtex $(MASTER)
-	pdflatex $(MASTER).tex
-endif
-	pdflatex $(MASTER).tex
+	@test -f ${MASTER}-blx.bib && ( bibtex ${MASTER}; pdflatex ${MASTER}.tex ) || echo "No Bibtex"
+	@pdflatex ${MASTER}.tex
 
 clean:
 	@rm -rf *.aux *.bbl *.blg *.brf *.log *.lof *.lot *.lol *.out *.tcp *.toc *.tps *.bak *.backup *.pdfsync *.synctex.gz *.*~
